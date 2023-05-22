@@ -6,19 +6,20 @@ import { useEffect, useState } from "react"
 import { signIn, signOut, useSession, getProviders } from "next-auth/react"
 
 const Nav = () => {
-  const isUserLoggedIn = true;
+  const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropwdown] = useState(false);
 
   useEffect(() => {
-    const setProviders = async () => {
+    const setUpProviders = async () => {
       const response = await getProviders();
-      setProviders();
+      setProviders(response);
     }
 
-    setProviders();
+    setUpProviders();
   }, [])
+
   return (
     <nav className="flex-between w-full mb-16 pt-3">
       <Link href="/" className="flex gap-2 flex-center">
@@ -29,7 +30,7 @@ const Nav = () => {
       {/* Desktop Navigation */}
 
       <div className="sm:flex hidden" >
-        {isUserLoggedIn ?
+        {session?.user ?
           (<div className="flex gap-3 md:gap-5">
             <Link href="/create-prompt"
               className="black_btn">Create Post</Link>
@@ -64,36 +65,36 @@ const Nav = () => {
 
       {/* Mobile Navigation */}
       <div className="sm:hidden flex relative">
-        {isUserLoggedIn ? (
+        {session?.user ? (
           <div className="flex">
             <Image
-            src="/assets/images/logo.svg"
-            width={37}
-            height={37}
-            className='rounded-full'
-            alt='profile'
-            onClick={() => setToggleDropwdown((prev) => !prev )}
+              src="/assets/images/logo.svg"
+              width={37}
+              height={37}
+              className='rounded-full'
+              alt='profile'
+              onClick={() => setToggleDropwdown((prev) => !prev)}
             />
             {toggleDropdown && (
               <div className="dropdown">
                 <Link
-                href="/profile"
-                className="dropdown_link"
-                onClick={() => setToggleDropwdown(false)}>
+                  href="/profile"
+                  className="dropdown_link"
+                  onClick={() => setToggleDropwdown(false)}>
                   My Profile
                 </Link>
                 <Link
-                href="/create-pompt"
-                className="dropdown_link"
-                onClick={() => setToggleDropwdown(false)}>
+                  href="/create-pompt"
+                  className="dropdown_link"
+                  onClick={() => setToggleDropwdown(false)}>
                   Create Prompt
                 </Link>
                 <button type="button"
-                onClick={() => {
-                  setToggleDropwdown();
-                  signOut();
-                }}
-                className="mt-5 w-full black_btn">
+                  onClick={() => {
+                    setToggleDropwdown();
+                    signOut();
+                  }}
+                  className="mt-5 w-full black_btn">
                   Sign Out
                 </button>
               </div>
@@ -102,7 +103,7 @@ const Nav = () => {
         )
           :
           <></>
-      }
+        }
       </div>
     </nav>
   )
