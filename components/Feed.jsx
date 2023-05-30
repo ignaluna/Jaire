@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, useEffect } from "react";
-
 import PromptCard from "./PromptCard";
+import Carousell from "./Carousell";
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
@@ -28,7 +28,6 @@ const Feed = () => {
 
   const fetchPosts = async () => {
     const response = await fetch("/api/prompt");
-    console.log(response)
     const data = await response.json();
 
     setAllPosts(data);
@@ -69,28 +68,31 @@ const Feed = () => {
   };
 
   return (
-    <section className='feed'>
-      <form className='relative w-full flex-center'>
-        <input
-          type='text'
-          placeholder='Search for a tag or a username'
-          value={searchText}
-          onChange={handleSearchChange}
-          required
-          className='search_input peer'
-        />
-      </form>
+    <div>
+      <Carousell/>
+      <section className='feed'>
+        <form className='relative w-full flex-center'>
+          <input
+            type='text'
+            placeholder='Search for a tag or a username'
+            value={searchText}
+            onChange={handleSearchChange}
+            required
+            className='search_input peer'
+          />
+        </form>
 
-      {/* All Prompts */}
-      {searchText ? (
-        <PromptCardList
-          data={searchedResults}
-          handleTagClick={handleTagClick}
-        />
-      ) : (
-        <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
-      )}
-    </section>
+        {/* All Prompts */}
+        {searchText ? (
+          <PromptCardList
+            data={searchedResults}
+            handleTagClick={handleTagClick}
+          />
+        ) : (
+          <PromptCardList data={allPosts} handleTagClick={handleTagClick} />
+        )}
+      </section>
+    </div>
   );
 };
 
