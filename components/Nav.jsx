@@ -24,7 +24,7 @@ const Nav = () => {
     <nav className='flex-between w-full pt-3'>
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/LogoNegro.png'
+          src='/assets/images/LogoBlanco.png'
           alt='logo'
           width={70}
           height={70}
@@ -36,9 +36,9 @@ const Nav = () => {
       <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            {/* <Link href='/create-prompt' className='black_btn'>
-              Create Post
-            </Link> */}
+            <Link href='/create-show' className='black_btn'>
+              Create Show
+            </Link>
 
             <button type='button' onClick={signOut} className='outline_btn'>
               Sign Out

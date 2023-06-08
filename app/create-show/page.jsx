@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 import { useState } from "react";
 import { useSession } from "next-auth/react";
@@ -6,25 +6,39 @@ import { useRouter } from "next/navigation";
 
 import Form from "@components/Form";
 
-const CreatePrompt = () => {
+const CreateShow = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
   const [submitting, setIsSubmitting] = useState(false);
-  const [post, setPost] = useState({ prompt: "", tag: "" });
+  const [show, setShow] = useState({
+    flyer: "",
+    eventLink: "",
+    date: "",
+    description: "",
+    location: "",
+    // artists: [],
+    // artistSocials: [],
+  });
 
-  const createPrompt = async (e) => {
+  const NewShow = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
 
     try {
-      const response = await fetch("/api/prompt/new", {
+      const response = await fetch("/api/show/new", {
         method: "POST",
         body: JSON.stringify({
-          prompt: post.prompt,
+          flyer: show.flyer,
+          eventLink: show.eventLink,
+          date: show.date,
+          description: show.description,
+          location: show.location,
+          // artists: show.artists,
+          // artistSocials: show.artistSocials,
           userId: session?.user.id,
-          tag: post.tag,
         }),
+        
       });
 
       if (response.ok) {
@@ -39,13 +53,13 @@ const CreatePrompt = () => {
 
   return (
     <Form
-      type='Create'
-      post={post}
-      setPost={setPost}
+      type="Create"
+      show={show}
+      setShow={setShow}
       submitting={submitting}
-      handleSubmit={createPrompt}
+      handleSubmit={NewShow}
     />
   );
 };
 
-export default CreatePrompt;
+export default CreateShow;
