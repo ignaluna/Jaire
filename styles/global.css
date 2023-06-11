@@ -3,6 +3,8 @@ body {
   }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
+
 
 @tailwind base;
 @tailwind components;
@@ -15,11 +17,6 @@ body {
 .logo {
   width: 70%;
   height: 80%;
-}
-
-.slider-container {
-  width: 40%;
-  height: 100vh;
 }
 
 .swiper {
@@ -164,16 +161,6 @@ body {
 	width: 110%;
 }
 
-/* .slideshow-title {
-	font-size: 62px;
-	color: #fff;
-	margin: 0 auto;
-	text-align: center;
-	margin-top: 25%;
-	letter-spacing: 3px;
-	font-weight: 300;
-} */
-
 .sub-heading {
 	padding-top: 50px;
 	font-size: 18px;
@@ -291,6 +278,58 @@ body {
 }
 
 
-/* slider */
+/* Acordeon */
 
+.accordion {
+	height: 33vh;
+}
+  
+  .content {
+	overflow: hidden;
+	transition: transform 0.5s ease-in-out;
+	transform: translateX(100%);
+  }
+  
+  
+  .content.show {
+	transform: translateX(0);
+  }
 
+  .titleq {
+	transition: transform 0.5s ease-in-out;
+	transform: translateX(-100%);
+}
+
+  .titleq.show {
+	transform: translateX(0);
+  }
+  
+  /* Carousel loop */
+  
+  
+ .slide {
+width: 250px;
+height: 200px;
+display: flex;
+align-items: center;
+padding: 15px;
+perspective: 100px;
+}
+
+.slide:hover{
+	transform: translateZ(20px);
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100%{
+		transform: translateX(100);
+	}
+	
+}
+
+.scroll-animation {
+  animation: scroll 40% linear infinite;
+}

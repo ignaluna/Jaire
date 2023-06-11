@@ -17,4 +17,5 @@ tag:{
 
 const Prompt = models.Prompt || model("Prompt", PromptSchema);
 
+
 export default Prompt;

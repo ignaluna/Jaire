@@ -36,9 +36,11 @@ const Nav = () => {
       <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
+            { session?.user.email === "ignaluna98pb@gmail.com" && 
             <Link href='/create-show' className='black_btn'>
               Create Show
             </Link>
+            }
 
             <button type='button' onClick={signOut} className='outline_btn'>
               Sign Out
@@ -77,7 +79,7 @@ const Nav = () => {
       <div className='sm:hidden flex relative'>
         {session?.user ? (
           <div className='flex'>
-            <Image
+            <img
               src={session?.user.image}
               width={37}
               height={37}
