@@ -6,14 +6,20 @@ body {
 @import url('https://fonts.googleapis.com/css2?family=Passion+One&display=swap');
 
 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* 
-  Note: The styles for this gradient grid background is heavily inspired by the creator of this 
-  amazing site (https://dub.sh) – all credits go to them! 
-*/
+.titulos {
+  font-size: 15vh;
+  color: white;
+}
+
+.video-container {
+  background-image: url('/public/assets/images/videofondo.mp4');
+}
+
 .logo {
   width: 70%;
   height: 80%;
@@ -156,42 +162,11 @@ body {
 
 /* 3D Slideshow */
 #slideshow {
-	padding-top: 50px;
 	height: 65vh;
-	width: 110%;
-}
-
-.sub-heading {
-	padding-top: 50px;
-	font-size: 18px;
-}
-.sub-heading-two {
-	font-size: 15px;
-}
-.sub-heading-three {
-	font-size: 13px;
-}
-.sub-heading-four {
-	font-size: 11px;
-}
-.sub-heading-five {
-	font-size: 9px;
-}
-.sub-heading-six {
-	font-size: 7px;
-}
-.sub-heading-seven {
-	font-size: 5px;
-}
-.sub-heading-eight {
-	font-size: 3px;
-}
-.sub-heading-nine {
-	font-size: 1px;
+	width: 100%;
 }
 
 .entire-content {
-	margin: auto;
   width: 25%;
   perspective: 1000px;
   position: relative;
@@ -202,7 +177,7 @@ body {
   height: 100%;
 	position: absolute;
 	float: right;
-	animation: rotar 30s infinite linear;
+	animation: rotar 50s infinite linear;
 	transform-style: preserve-3d;
 }
 
@@ -212,7 +187,7 @@ body {
 }
 
 .content-carrousel figure {
-	width: 100%;
+	width: 200px;
   height: 200px;
 	border: 1px solid #3b444b;
 	overflow: hidden;
@@ -306,30 +281,42 @@ body {
   
   /* Carousel loop */
   
-  
- .slide {
-width: 250px;
-height: 200px;
-display: flex;
-align-items: center;
-padding: 15px;
-perspective: 100px;
+
+
+.slider {
+    overflow: hidden;
+    position: relative;
 }
 
-.slide:hover{
-	transform: translateZ(20px);
+.slider .slide-track {
+    animation: scroll 20s linear infinite;
+    display: flex;
+    width: calc(250px * 8);
+
 }
+
+.slider .slide-track:hover {
+    animation-play-state: paused;
+
+
+}
+
+.slider .slide {
+    height: 200px;
+    width: 250px;
+    }
+
+    .slider .slide:hover {
+      transform: scale(1.2);
+      transition: all 300ms;
+
+      }
 
 @keyframes scroll {
-	0% {
-		transform: translateX(0);
-	}
-	100%{
-		transform: translateX(100);
-	}
-	
-}
-
-.scroll-animation {
-  animation: scroll 40% linear infinite;
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 4));
+    }
 }

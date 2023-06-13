@@ -5,18 +5,20 @@ import ShowCard from "@components/ShowCard";
 import { Slider } from "@components/Swiper";
 import Accordion from "@components/Accordion";
 import Carousel from "@components/Carousel";
+import Logo from "@components/Logo";
+import Team from "@components/Team";
+import Galery from "@components/Galery";
 
 const data = [
   {
     question: "QUIENES SOMOS???",
-    answer:
-      "The information in this article is based on the expert advice found in trusted medical and government sources, such as the American Academy of Pediatrics and the American College of Obstetricians and Gynecologists. You can find a full list of sources used for this article below. The content on this page should not replace professional medical advice. Always consult medical professionals for full diagnosis and treatment.",
+    answer: "TERRIbles producciones",
     number: 1
   },
   {
-    question: "Question 2",
+    question: "SUMATE",
     answer:
-      "The information in this article is based on the expert advice found in trusted medical and government sources, such as the American Academy of Pediatrics and the American College of Obstetricians and Gynecologists. You can find a full list of sources used for this article below. The content on this page should not replace professional medical advice. Always consult medical professionals for full diagnosis and treatment.",
+      "+++++++++++++++++++",
     number: 2
   },
   {
@@ -31,27 +33,34 @@ const Home = () => (
 
     {/* Imagen Logo + Reels */}
 
-    <div className="flex justify-center items-center min-h-screen">
-      <img src="/assets/images/LogoBlanco.png" alt="Logo" className="w-full h-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl logo animate-fade-in" />
-    </div>
+    <Logo />
 
+{/* Fondo espacio exterior */}
+
+    <div className="bg-[url('/assets/images/marte.png')] bg-cover bg-bottom filter backdrop-blur-sm bg-no-repeat h-auto w-screen">
+      
+      {/* Amigxs */}
+
+      <Carousel />
+
+      {/* Slider with shows */}
+
+      <div className="flex h-screen w-screen items-center justify-center overflow-visible">
+        <Slider />
+      </div>
+    </div>
     {/* Quienes somos? */}
 
     <Accordion data={data} move={"right"} number={1} />
 
-    {/* Slider with shows */}
+    {/* NUestros Artistas */}
 
-    <div className="flex h-screen w-screen items-center justify-center overflow-visible">
-      <Slider />
-    </div>
+    <Galery />
 
-    {/* <Accordion data={data} move={"left"} number={2} /> */}
+    {/* Conovocatoria */}
 
-    {/* <Carousel /> */}
-    {/* Carrousel de artistas */}
-    {/* <div className="h-screen w-screen ">
-      <ShowsActivos />
-    </div> */}
+    <Accordion data={data} move={"left"} number={2} />
+
   </section>
 );
 

@@ -1,31 +1,34 @@
 "use client"
 
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 
 const ShowsActivos = () => {
+    const { data: session } = useSession();
+
     return (
         <div>
             <section id="slideshow">
                 <div class="entire-content">
                     <div class="content-carrousel">
-                        <figure class="shadow">
-                            <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsMz6nOzu_U_BjdkBb5AO1kFm223F4plaD8Q&usqp=CAU' alt="imagen show 1"></img>
-                        </figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/21261/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/567973/pexels-photo-567973.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/776653/pexels-photo-776653.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/54630/japanese-cherry-trees-flowers-spring-japanese-flowering-cherry-54630.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/131046/pexels-photo-131046.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/302515/pexels-photo-302515.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/301682/pexels-photo-301682.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                        <figure class="shadow"><img src="https://images.pexels.com/photos/933054/pexels-photo-933054.jpeg?w=940&h=650&auto=compress&cs=tinysrgb" /></figure>
-                    </div>
+                        <figure class="shadow"><img src='/assets/images/artist/artist1.jpg' alt="imagen show 1"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist2.jpg' alt="imagen show 2"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist3.jpg' alt="imagen show 3"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist4.jpg' alt="imagen show 4"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist5.jpeg' alt="imagen show 5"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist6.png' alt="imagen show 6"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist7.jpg' alt="imagen show 7"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist8.jpg' alt="imagen show 8"></img></figure>
+                        <figure class="shadow"><img src='/assets/images/artist/artist9.jpg' alt="imagen show 9"></img></figure>
+                        </div>
                 </div>
             </section>
+            { session?.user.email === "ignaluna98pb@gmail.com" && 
             <Link href='/create-show' className='black_btn'>
-                Create Show
+              Create Show
             </Link>
+            }
         </div>
 
     );

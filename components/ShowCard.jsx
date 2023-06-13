@@ -19,7 +19,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
               width={50}
               height={50}
             />
-            <div className="border-b flex-grow w-full mb-5 p-4"></div>
+            <div className="border-b border-green-900 flex-grow w-full my-5"></div>
             <p className="text-white">Ubicación</p>
           </Link>
           <Link className="flex flex-col items-center w-full" href={show.eventLink} target="_blank" rel="noopener noreferrer">

@@ -21,7 +21,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className='flex-between w-full pt-3'>
+    <nav className="flex-between px-4 fixed top-0 left-0 z-10 w-full bg-opacity-75 backdrop-filter backdrop-blur-sm">
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/LogoBlanco.png'
@@ -42,7 +42,7 @@ const Nav = () => {
             </Link>
             }
 
-            <button type='button' onClick={signOut} className='outline_btn'>
+            <button type='button' onClick={signOut} className='black_btn'>
               Sign Out
             </button>
 
