@@ -12,7 +12,7 @@ const Accordion = ({ data, move, number }) => {
     <div className="w-screen accordion" >
       {data.map((item, i) => (
         item.number === number ? 
-        <div className="h-full w-full" onClick={() => toggle(i)}>
+        <div className="h-full w-full" key={i} onClick={() => toggle(i)}>
             <div className={` border-r-4 border-green-900 accordion absolute w-screen h-full flex justify-center items-center 
             titleq ${move === "left" ? selected === i ? "show" : "" : selected === i ? "" : "show"}
             ${move === "left"? "titulos font-jura" : "titulos font-jura"}`} >
