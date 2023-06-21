@@ -35,10 +35,10 @@ const Home = () => (
 
     <Logo />
 
-{/* Fondo espacio exterior */}
+    {/* Fondo espacio exterior */}
 
     <div className="bg-[url('/assets/images/marte.png')] bg-cover bg-bottom filter backdrop-blur-sm bg-no-repeat h-auto w-screen">
-      
+
       {/* Amigxs */}
 
       <Carousel />
@@ -49,6 +49,7 @@ const Home = () => (
         <Slider />
       </div>
     </div>
+    {/* <div className="h-auto w-screen bg-[url('/assets/images/fondoartistas.png')] bg-cover filter backdrop-blur-sm bg-no-repeat"> */}
     {/* Quienes somos? */}
 
     <Accordion data={data} move={"right"} number={1} />
@@ -60,8 +61,9 @@ const Home = () => (
     {/* Conovocatoria */}
 
     <Accordion data={data} move={"left"} number={2} />
+  {/* </div> */}
 
-  </section>
+  </section >
 );
 
 export default Home;

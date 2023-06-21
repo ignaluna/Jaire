@@ -9,7 +9,7 @@ const Accordion = ({ data, move, number }) => {
   };
 
   return (
-    <div className="w-screen accordion" >
+    <div className="w-screen accordion bg-black bg-opacity-75" >
       {data.map((item, i) => (
         item.number === number ? 
         <div className="h-full w-full" key={i} onClick={() => toggle(i)}>
