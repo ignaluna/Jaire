@@ -5,12 +5,12 @@ import Image from 'next/image';
 
 const Logo = () => {
   const [isLoading, setIsLoading] = useState(true);
-  const [videoClass, setVideoClass] = useState('w-full h-full object-cover blur-sm hidden');
+  const [videoClass, setVideoClass] = useState('w-full h-full object-cover hidden');
 
   useEffect(() => {
     const loadingTimeout = setTimeout(() => {
       setIsLoading(false);
-      setVideoClass('w-full h-full object-cover blur-sm');
+      setVideoClass('w-full h-full object-cover');
     }, 3000); // Tiempo de carga límite: 5 segundos
 
     return () => {
@@ -29,15 +29,15 @@ const Logo = () => {
           playsInline
           onLoadedData={() => setIsLoading(false)}
         >
-          <source src="/assets/images/videofondo.mp4" type="video/mp4" />
+          <source src="/assets/images/fondos/videofondo2.mp4" type="video/mp4" />
         </video>
       </div>
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="flex relative justify-center items-center m-4 bg-black bg-opacity-75 rounded-lg">
+        <div className="flex relative justify-center items-center m-2 bg-black bg-opacity-75 rounded-lg">
           <Image
-            src="/assets/images/LogoBlanco.png"
+            src="/assets/images/logos/LogoBlanco.png"
             alt="Logo"
             className="w-full h-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl logo"
             height={500}

@@ -1,5 +1,6 @@
 body {
 	overflow-x: hidden;
+  
   }
 
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
@@ -12,7 +13,7 @@ body {
 @tailwind utilities;
 
 .titulos {
-  font-size: 15vh;
+  font-size: 13vh;
   color: white;
 }
 
@@ -33,8 +34,6 @@ body {
   .swiper-slide {
 	text-align: center;
 	font-size: 18px;
-  
-	/* Center slide text vertically */
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -51,7 +50,7 @@ body {
 
 .animate-fade-in {
   animation-name: fade-in;
-  animation-duration: 2s; /* Ajusta la duración de la animación según tus necesidades */
+  animation-duration: 2s; 
 }
 
 
@@ -69,7 +68,7 @@ body {
 }
 
 .black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+  @apply font-jura rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm flex items-center justify-center;
 }
 
 .outline_btn {
@@ -78,18 +77,6 @@ body {
 
 .head_text {
   @apply mt-5 text-5xl font-extrabold leading-[1.15] text-black sm:text-6xl;
-}
-
-.orange_gradient {
-  @apply bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 bg-clip-text text-transparent;
-}
-
-.green_gradient {
-  @apply bg-gradient-to-r from-green-400 to-green-500 bg-clip-text text-transparent;
-}
-
-.blue_gradient {
-  @apply bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent;
 }
 
 .desc {
@@ -102,14 +89,6 @@ body {
 
 .copy_btn {
   @apply w-7 h-7 rounded-full bg-white/10 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur flex justify-center items-center cursor-pointer;
-}
-
-.glassmorphism {
-  @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
-}
-
-.prompt_layout {
-  @apply space-y-6 py-8 sm:columns-2 sm:gap-6 xl:columns-3;
 }
 
 /* Feed Component */
@@ -139,11 +118,6 @@ body {
   @apply text-sm font-inter text-gray-700 hover:text-gray-500 font-medium;
 }
 
-/* PromptCard Component */
-.prompt_card {
-  @apply flex-1 break-inside-avoid rounded-lg border border-gray-300 bg-white/20 bg-clip-padding p-6 pb-4 backdrop-blur-lg backdrop-filter md:w-[360px] w-full h-fit;
-}
-
 .flex-center {
   @apply flex justify-center items-center;
 }
@@ -158,98 +132,6 @@ body {
 
 .flex-between {
   @apply flex justify-between items-center;
-}
-
-/* 3D Slideshow */
-#slideshow {
-	height: 65vh;
-	width: 100%;
-}
-
-.entire-content {
-  width: 25%;
-  perspective: 1000px;
-  position: relative;
-}
-
-.content-carrousel {
-	width: 100%;
-  height: 100%;
-	position: absolute;
-	float: right;
-	animation: rotar 50s infinite linear;
-	transform-style: preserve-3d;
-}
-
-.content-carrousel:hover {
-	animation-play-state: paused;
-	cursor: pointer;
-}
-
-.content-carrousel figure {
-	width: 200px;
-  height: 200px;
-	border: 1px solid #3b444b;
-	overflow: hidden;
-	position: absolute;
-}
-
-.content-carrousel figure:nth-child(1) {
-	transform: rotateY(0deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(2) {
-	transform: rotateY(40deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(3) {
-	transform: rotateY(80deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(4) {
-	transform: rotateY(120deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(5) {
-	transform: rotateY(160deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(6) {
-	transform: rotateY(200deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(7) {
-	transform: rotateY(240deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(8) {
-	transform: rotateY(280deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(9) {
-	transform: rotateY(320deg) translateZ(300px);
-}
-.content-carrousel figure:nth-child(10) {
-	transform: rotateY(360deg) translateZ(300px);
-}
-
-.shadow {
-	position: absolute;
-	box-shadow: 0px 0px 20px 0px #000;
-	border-radius: 10px;
-}
-
-.content-carrousel img {
-	image-rendering: auto;
-	transition: all 300ms;
-	width: 100%;
-	height: 100%;
-}
-
-.content-carrousel img:hover {
-	transform: scale(1.2);
-	transition: all 300ms;
-}
-
-@keyframes rotar {
-	from {
-		transform: rotateY(0deg);
-	}
-	to {
-		transform: rotateY(360deg);
-	}
 }
 
 
@@ -281,8 +163,6 @@ body {
   
   /* Carousel loop */
   
-
-
 .slider {
     overflow: hidden;
     position: relative;

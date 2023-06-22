@@ -24,7 +24,7 @@ const Nav = () => {
     <nav className="flex-between px-4 fixed top-0 left-0 z-10 w-full bg-opacity-75 backdrop-filter backdrop-blur-sm">
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
-          src='/assets/images/LogoBlanco.png'
+          src='/assets/images/logos/LogoBlanco.png'
           alt='logo'
           width={70}
           height={70}

@@ -1,13 +1,8 @@
-import Feed from "@components/Feed";
-import ShowsActivos from "@components/ShowsActivos";
-import Show from "@models/show";
-import ShowCard from "@components/ShowCard";
 import { Slider } from "@components/Swiper";
 import Accordion from "@components/Accordion";
 import Carousel from "@components/Carousel";
 import Logo from "@components/Logo";
-import Team from "@components/Team";
-import Galery from "@components/Galery";
+import Galery from "@components/Contact";
 
 const data = [
   {
@@ -37,7 +32,7 @@ const Home = () => (
 
     {/* Fondo espacio exterior */}
 
-    <div className="bg-[url('/assets/images/marte.png')] bg-cover bg-bottom filter backdrop-blur-sm bg-no-repeat h-auto w-screen">
+    <div className="bg-[url('/assets/images/fondos/marte.png')] bg-cover bg-bottom filter backdrop-blur-sm bg-no-repeat h-auto w-screen">
 
       {/* Amigxs */}
 
@@ -45,7 +40,7 @@ const Home = () => (
 
       {/* Slider with shows */}
 
-      <div className="flex h-screen w-screen items-center justify-center overflow-visible">
+      <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
         <Slider />
       </div>
     </div>

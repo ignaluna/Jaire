@@ -12,7 +12,7 @@ const RootLayout = ({ children }) => (
     <head>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&display=swap" rel="stylesheet" />
     </head>
-    <body className="bg-cover bg-center" style={{ backgroundImage: `url('/assets/images/fondoterri.png')` }} >
+    <body className="bg-cover bg-center" style={{ backgroundImage: `url('/assets/images/fondos/fondoterri.png')` }} >
       <Provider>
           <main className='app'>
             <Nav />

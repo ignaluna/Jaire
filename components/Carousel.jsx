@@ -12,42 +12,42 @@ const Carousel = () => {
                 <div className='slide-track'>
                     <div className='slide'>
                         <img className='w-full h-full'
-                            src="../assets/images/alpogo.png"
+                            src="../assets/images/amigxs/alpogo.png"
                             alt="alpogo" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full'
-                            src="../assets/images/pdg.png"
+                            src="../assets/images/amigxs/pdg.png"
                             alt="pielldegallina" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full'
-                            src="../assets/images/pezvolcan.png"
+                            src="../assets/images/amigxs/pezvolcan.png"
                             alt="pez volcan" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full'
-                            src="../assets/images/quality.png"
+                            src="../assets/images/amigxs/quality.png"
                             alt="quality" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full hover:translate-z-20'
-                            src="../assets/images/alpogo.png"
+                            src="../assets/images/amigxs/alpogo.png"
                             alt="alpogo" />
                     </div>
                     <div className='slide hover:translate-z-20'>
                         <img className='w-full h-full hover:translate-z-20'
-                            src="../assets/images/pdg.png"
+                            src="../assets/images/amigxs/pdg.png"
                             alt="pielldegallina" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full hover:translate-z-20'
-                            src="../assets/images/pezvolcan.png"
+                            src="../assets/images/amigxs/pezvolcan.png"
                             alt="pez volcan" />
                     </div>
                     <div className='slide'>
                         <img className='w-full h-full '
-                            src="../assets/images/quality.png"
+                            src="../assets/images/amigxs/quality.png"
                             alt="quality" />
                     </div>
                 </div>
