@@ -36,10 +36,10 @@ const Nav = () => {
       <div className='sm:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
-            { session?.user.email === "ignaluna98pb@gmail.com" && 
-            <Link href='/create-show' className='black_btn'>
-              Create Show
-            </Link>
+            {session?.user.email === "ignaluna98pb@gmail.com" &&
+              <Link href='/create-show' className='black_btn'>
+                Create Show
+              </Link>
             }
 
             <button type='button' onClick={signOut} className='black_btn'>
@@ -97,13 +97,15 @@ const Nav = () => {
                 >
                   My Profile
                 </Link>
+                {session?.user.email === "ignaluna98pb@gmail.com" &&
                 <Link
-                  href='/create-prompt'
+                  href='/create-show'
                   className='dropdown_link'
                   onClick={() => setToggleDropdown(false)}
                 >
-                  Create Prompt
+                  Create Show
                 </Link>
+                  }
                 <button
                   type='button'
                   onClick={() => {
