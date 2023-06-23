@@ -1,5 +1,4 @@
-"use client";
-
+"use client"
 import { useSession } from "next-auth/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -10,37 +9,37 @@ const MyProfile = () => {
   const router = useRouter();
   const { data: session } = useSession();
 
-  const [myPosts, setMyPosts] = useState([]);
+  const [myShows, setMyShows] = useState([]);
 
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await fetch(`/api/users/${session?.user.id}/posts`);
+    const fetchShows = async () => {
+      const response = await fetch(`/api/show`);
       const data = await response.json();
 
-      setMyPosts(data);
+      setMyShows(data);
     };
 
-    if (session?.user.id) fetchPosts();
+    if (session?.user.id) fetchShows();
   }, [session?.user.id]);
 
-  const handleEdit = (post) => {
-    router.push(`/update-prompt?id=${post._id}`);
+  const handleEdit = (show) => {
+    router.push(`/update-show?id=${show._id}`);
   };
 
-  const handleDelete = async (post) => {
+  const handleDelete = async (show) => {
     const hasConfirmed = confirm(
-      "Are you sure you want to delete this prompt?"
+      "Queres eliminar este show? Lu puta"
     );
 
     if (hasConfirmed) {
       try {
-        await fetch(`/api/prompt/${post._id.toString()}`, {
+        await fetch(`/api/show/${show._id.toString()}`, {
           method: "DELETE",
         });
 
-        const filteredPosts = myPosts.filter((item) => item._id !== post._id);
+        const filteredShows = myShows.filter((item) => item._id !== show._id);
 
-        setMyPosts(filteredPosts);
+        setMyShows(filteredShows);
       } catch (error) {
         console.log(error);
       }
@@ -50,8 +49,8 @@ const MyProfile = () => {
   return (
     <Profile
       name='My'
-      desc='Welcome to your personalized profile page. Share your exceptional prompts and inspire others with the power of your imagination'
-      data={myPosts}
+      desc='Los mejores shows de Cordoba Capital'
+      data={myShows}
       handleEdit={handleEdit}
       handleDelete={handleDelete}
     />

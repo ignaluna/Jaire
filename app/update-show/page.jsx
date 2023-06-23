@@ -14,10 +14,6 @@ const UpdateShow = () => {
     flyer: "",
     eventLink: "",
     date: "",
-    // description: "",
-    // location: "",
-    // artists: "",
-    // artistSocials: "",
   });
   const [submitting, setIsSubmitting] = useState(false);
 
@@ -30,10 +26,7 @@ const UpdateShow = () => {
         flyer: data.flyer,
         eventLink: data.eventLink,
         date: data.date,
-        // description: data.description,
-        // location: data.location,
-        // artists: data.artists,
-        // artistSocials: data.artistSocials,
+        location: data.location,
       });
     };
 
@@ -53,10 +46,7 @@ const UpdateShow = () => {
           flyer: show.flyer,
           eventLink: show.eventLink,
           date: show.date,
-          // description: show.description,
-          // location: show.location,
-          // artists: show.artists,
-          // artistSocials: show.artistSocials,
+          location: show.location,
         }),
       });
 

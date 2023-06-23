@@ -56,20 +56,6 @@ const Form = ({ type, show, setShow, submitting, handleSubmit }) => {
             className="form_input"
           />
         </label>
-
-        <label>
-          <span className="font-satoshi font-semibold text-base text-gray-700">
-            Description
-          </span>
-          <textarea
-            value={show.description}
-            onChange={(e) => setShow({ ...show, description: e.target.value })}
-            placeholder="Write a description"
-            required
-            className="form_textarea"
-          />
-        </label>
-
         <label>
           <span className="font-satoshi font-semibold text-base text-gray-700">
             Location

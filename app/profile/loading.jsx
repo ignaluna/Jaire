@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className='w-full flex-center'>
       <Image
-        src='assets/icons/images/loading/aliendance.gif'
+        src='assets/images/loading/aliendance.gif'
         width={50}
         height={50}
         alt='loader'

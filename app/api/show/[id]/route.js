@@ -19,10 +19,7 @@ export const PATCH = async (request, { params }) => {
     flyer,
     eventLink,
     date,
-    description,
     location,
-    artists,
-    artistSocials,
   } = await request.json();
 
   try {
@@ -39,10 +36,7 @@ export const PATCH = async (request, { params }) => {
     existingShow.flyer = flyer;
     existingShow.eventLink = eventLink;
     existingShow.date = date;
-    existingShow.description = description;
     existingShow.location = location;
-    existingShow.artists = artists;
-    existingShow.artistSocials = artistSocials;
 
     await existingShow.save();
 

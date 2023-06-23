@@ -45,7 +45,7 @@ export const Slider = () => {
         :
         < div className="flex flex-row h-screen w-screen">
 
-          <div className="flex max-sm:hidden flex-col h-auto items-center justify-around ml-4 my-9 px-4 border-r border-green-900 flex-grow" style={{ lineHeight: "0" }}>
+          <div className="flex max-md:hidden flex-col h-auto items-center justify-around ml-4 my-9 px-4 border-r border-green-900 flex-grow" style={{ lineHeight: "0" }}>
             <span className='font-jura titulos' style={{ lineHeight: "0" }}>S</span>
             <span className='font-jura titulos' style={{ lineHeight: "0" }}>H</span>
             <span className='font-jura titulos' style={{ lineHeight: "0" }}>O</span>

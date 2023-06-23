@@ -17,9 +17,7 @@ export const POST = async (request) => {
         await connectToDB();
         const newShow = new Show({ creator: userId, flyer, eventLink, date, description, location, artists, artistSocials
         });
-
-        console.log("A verga" + newShow)
-
+        
         await newShow.save();
         return new Response(JSON.stringify(newShow), { status: 201 })
     } catch (error) {
