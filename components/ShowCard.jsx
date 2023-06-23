@@ -11,7 +11,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
 
   return (
     <article className="flex-center max-sm:flex-col h-full py-9 max-sm:px-16">
-      {/* <div className="max-sm:hidden flex flex-col justify-between items-center sm:mr-2 border border-green-900 px-4 rounded-lg bg-green-900 bg-opacity-30">
+      <div className="max-sm:hidden flex flex-col justify-between items-center sm:mr-2 border border-green-900 px-4 rounded-lg bg-green-900 bg-opacity-30">
           <Link className="flex flex-col items-center w-full" href={`https://www.google.com/maps/search/?query=${show.location}`} target="_blank" rel="noopener noreferrer">
             <Image
               src="/assets/icons/show/ubic2.svg"
@@ -42,7 +42,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
             <div className="border-b border-green-900 flex-grow w-full my-5"></div>
             <p className="text-white">{show.date}</p>
           </div>
-        </div> */}
+        </div>
       <img
         src={show.flyer}
         alt='show_flyer'
