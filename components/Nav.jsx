@@ -21,7 +21,7 @@ const Nav = () => {
   }, []);
 
   return (
-    <nav className="flex-between px-4 fixed top-0 left-0 z-10 w-full bg-opacity-75 backdrop-filter backdrop-blur-sm">
+    <nav className="flex-between px-4 fixed top-0 left-0 z-10 w-screen bg-opacity-75 backdrop-filter backdrop-blur-sm">
       <Link href='/' className='flex gap-2 flex-center'>
         <Image
           src='/assets/images/logos/LogoBlanco.png'
@@ -51,7 +51,7 @@ const Nav = () => {
                 src={session?.user.image}
                 width={37}
                 height={37}
-                className='rounded-full'
+                className='rounded-full sm:mr-4'
                 alt='profile'
               />
             </Link>

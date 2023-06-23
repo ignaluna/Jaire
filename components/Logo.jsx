@@ -35,9 +35,9 @@ const Logo = () => {
       {isLoading ? (
         <Loading />
       ) : (
-        <div className="flex relative justify-center items-center m-2 bg-black bg-opacity-75 rounded-lg">
+        <div className="flex relative justify-center items-center m-2 rounded-lg">
           <Image
-            src="/assets/images/logos/LogoBlanco.png"
+            src="/assets/images/logos/LogoBlanco2.png"
             alt="Logo"
             className="w-full h-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl logo"
             height={500}
