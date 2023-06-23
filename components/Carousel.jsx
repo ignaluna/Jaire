@@ -5,7 +5,7 @@ const Carousel = () => {
         <div className='h-1/2 flex-col flex-between px-4'>
             <div className='flex flex-row w-full items-center'>
                 <div className="border-b border-green-900 flex-grow w-full m-5"></div>
-                <h1 className='titulos max-sm:text-[250%] bold font-jura'>AMIGXS</h1>
+                <h1 className='titulos max-md:text-[250%] bold font-jura'>AMIGXS</h1>
                 <div className="border-b border-green-900 flex-grow w-full m-5"></div>
             </div>
             <div className="slider w-full px-4">

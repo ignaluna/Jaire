@@ -13,7 +13,7 @@ const data = [
   {
     question: "SUMATE",
     answer:
-      "+++++++++++++++++++",
+      "+++++++++++++++++",
     number: 2
   },
   {
@@ -44,7 +44,6 @@ const Home = () => (
         <Slider />
       </div>
     </div>
-    {/* <div className="h-auto w-screen bg-[url('/assets/images/fondoartistas.png')] bg-cover filter backdrop-blur-sm bg-no-repeat"> */}
     {/* Quienes somos? */}
 
     <Accordion data={data} move={"right"} number={1} />

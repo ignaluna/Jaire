@@ -43,11 +43,11 @@ export const Slider = () => {
           <Swiper
             loop={true}
             pagination={true}
-            modules={[Pagination]}
-            // autoplay={{ delay: 3000 }}
+            modules={[Pagination, Autoplay]}
+            autoplay={{ delay: 3000 }}
           >
             {allShows.map((show) => (
-              <SwiperSlide key={show._id} className='max-sm:gap-3'>
+              <SwiperSlide key={show._id} className='max-md:gap-3'>
                 <ShowCard
                   key={show._id}
                   show={show}

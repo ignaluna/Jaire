@@ -33,7 +33,7 @@ const Nav = () => {
         {/* <p className='logo_text'>Terribles Producciones</p> */}
       </Link>
       {/* Desktop Navigation */}
-      <div className='sm:flex hidden'>
+      <div className='md:flex hidden'>
         {session?.user ? (
           <div className='flex gap-3 md:gap-5'>
             {session?.user.email === "ignaluna98pb@gmail.com" &&
@@ -51,7 +51,7 @@ const Nav = () => {
                 src={session?.user.image}
                 width={37}
                 height={37}
-                className='rounded-full sm:mr-4'
+                className='rounded-full md:mr-4'
                 alt='profile'
               />
             </Link>
@@ -76,7 +76,7 @@ const Nav = () => {
       </div>
 
       {/* Mobile Navigation */}
-      <div className='sm:hidden flex relative'>
+      <div className='md:hidden flex relative'>
         {session?.user ? (
           <div className='flex'>
             <img

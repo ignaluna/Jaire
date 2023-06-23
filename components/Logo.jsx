@@ -39,7 +39,7 @@ const Logo = () => {
           <Image
             src="/assets/images/logos/LogoBlanco2.png"
             alt="Logo"
-            className="w-full h-auto sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl logo"
+            className="w-full h-auto md:max-w-lg lg:max-w-xl xl:max-w-2xl logo"
             height={500}
             width={500}
           />
