@@ -16,15 +16,27 @@ export const Slider = () => {
   const [allShows, setAllShows] = useState(0);
 
   const fetchShows = async () => {
-    const response = await fetch("/api/show");
-    const data = await response.json();
+    const controller = new AbortController();
+    const { signal } = controller;
+    const timeoutId = setTimeout(() => controller.abort(), 10000); // Set timeout for 10 seconds
 
-    setAllShows(data);
+    try {
+      const response = await fetch("/api/show", { signal });
+      const data = await response.json();
+      setAllShows(data);
+    } catch (error) {
+      if (error.name === 'AbortError') {
+        console.error('Timeout exceeded for fetching data.');
+      } else {
+        console.error('Error occurred while fetching data:', error);
+      }
+    } finally {
+      clearTimeout(timeoutId);
+    }
   };
 
   useEffect(() => {
     fetchShows();
-    console.log(allShows)
   }, []);
   return (
     <>
