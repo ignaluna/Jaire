@@ -7,8 +7,6 @@ import Form from "@components/Form";
 
 const CreateShow = () => {
   const router = useRouter();
-  const { data: session } = useSession();
-
   const [submitting, setIsSubmitting] = useState(false);
   const [show, setShow] = useState({
     flyer: "",

@@ -1,3 +1,4 @@
+"use client"
 import { Slider } from "@components/Swiper";
 import Accordion from "@components/Accordion";
 import Carousel from "@components/Carousel";

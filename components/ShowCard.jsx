@@ -79,12 +79,12 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
 
       {authorizedEmails.includes(session?.user.email)  && pathName === "/profile" && (
         <div className='mt-5 flex-center gap-4 h-full  pt-3 border border-green-900 px-4 rounded-lg bg-green-900 bg-opacity-30'>
-          <p
+          {/* <p
             className='font-jura text-sm green_gradient cursor-pointer'
             onClick={handleEdit}
           >
             Edit
-          </p>
+          </p> */}
           <p
             className='font-jura text-sm orange_gradient cursor-pointer'
             onClick={handleDelete}

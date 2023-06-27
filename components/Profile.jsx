@@ -9,7 +9,11 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       <p className='desc text-left'>{desc}</p>
 
       <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
-        <Slider />
+        <Slider 
+        data={data}
+        handleEdit={handleEdit}
+        handleDelete={handleDelete}
+        />
       </div>
     </section>
   );
