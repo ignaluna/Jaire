@@ -3,9 +3,6 @@ import Image from "next/image";
 import { useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 const ShowCard = ({ show, handleEdit, handleDelete }) => {
   const { data: session } = useSession();

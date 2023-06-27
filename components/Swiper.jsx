@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react';
 // import Swiper core and required modules
-import { Pagination, Autoplay, EffectCreative } from "swiper";
+import { Pagination, Autoplay } from "swiper";
 
 import { Swiper, SwiperSlide } from 'swiper/react';
 

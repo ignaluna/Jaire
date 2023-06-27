@@ -1,12 +1,10 @@
 "use client"
 import Link from "next/link";
 import { useState } from "react";
-import dotenv from "dotenv";
 import Galery from "./Contact";
 import { useSession } from "next-auth/react";
 
 
-dotenv.config();
 
 const Form = ({ type, show, setShow, submitting, handleSubmit }) => {
   const { data: session } = useSession();

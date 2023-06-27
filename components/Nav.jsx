@@ -4,9 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 
 const Nav = () => {

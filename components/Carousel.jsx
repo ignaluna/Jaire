@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Carousel = () => {
     return (
         <div className='h-1/2 flex-col flex-between px-4'>
