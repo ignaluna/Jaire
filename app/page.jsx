@@ -3,6 +3,7 @@ import Accordion from "@components/Accordion";
 import Carousel from "@components/Carousel";
 import Logo from "@components/Logo";
 import Galery from "@components/Contact";
+import Link from "next/link";
 
 const data = [
   {
@@ -54,8 +55,9 @@ const Home = () => (
 
     {/* Conovocatoria */}
 
-    <Accordion data={data} move={"left"} number={2} />
-  {/* </div> */}
+    <Link href={"https://docs.google.com/forms/d/e/1FAIpQLSd1niMAsSbmm-ULyc4IEb6dEBBpTiwHcQqx1G1W6cIf8sB45g/viewform"} target="_blank" rel="noopener noreferrer">
+      <Accordion data={data} move={"left"} number={2} />
+    </Link>
 
   </section >
 );

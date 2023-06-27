@@ -17,7 +17,6 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
   return (
     <article className="flex-center max-md:flex-col h-full py-9 max-md:px-16">
       <div className="max-md:hidden h-full flex flex-col justify-between items-center md:mr-2 border border-green-900 px-4 rounded-lg bg-green-900 bg-opacity-30">
-        <Link className="flex flex-col items-center w-full" href={`https://www.google.com/maps/search/?query=${show.location}`} target="_blank" rel="noopener noreferrer">
           <Image
             src="/assets/icons/show/ubic2.svg"
             alt="Ubicación"
@@ -25,8 +24,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
             height={50}
           />
           <div className="border-b border-green-900 flex-grow w-full my-5"></div>
-          <p className="text-white">Ubicación</p>
-        </Link>
+          <p className="text-white">{show.location}</p>
         <Link className="flex flex-col items-center w-full" href={show.eventLink} target="_blank" rel="noopener noreferrer">
           <Image
             src="/assets/icons/show/link3.svg"
