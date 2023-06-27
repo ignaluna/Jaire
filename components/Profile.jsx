@@ -1,4 +1,4 @@
-import ShowCard from "./ShowCard";
+import { Slider } from "./Swiper";
 
 const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
   return (
@@ -8,15 +8,8 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p className='desc text-left'>{desc}</p>
 
-      <div className='mt-10 prompt_layout'>
-        {data.map((show) => (
-          <ShowCard
-            key={show._id}
-            show={show}
-            handleEdit={() => handleEdit && handleEdit(show)}
-            handleDelete={() => handleDelete && handleDelete(show)}
-          />
-        ))}
+      <div className="flex h-screen w-screen items-center justify-center overflow-hidden">
+        <Slider />
       </div>
     </section>
   );

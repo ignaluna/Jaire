@@ -1,13 +1,18 @@
 "use client"
 import Image from "next/image";
 import { useSession } from "next-auth/react";
-import { usePathname, useRouter } from "next/navigation";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const ShowCard = ({ show, handleEdit, handleDelete }) => {
   const { data: session } = useSession();
   const pathName = usePathname();
+  const authorizedEmails =  ["ignaluna98pb@gmail.com", "lualeva17@gmail.com", 
+  "terriproduccionescontacto@gmail.com", "terriproducciones@gmail.com"];
+  // process.env.AUTHORIZED_EMAILS.split(",")
 
   return (
     <article className="flex-center max-md:flex-col h-full py-9 max-md:px-16">
@@ -50,7 +55,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
         height={700}
         className="rounded-lg h-full transition duration-500 ease-in-out border border-green-900" />
       <div className="md:hidden mt-2 flex w-full py-6 justify-between items-center border border-green-900 rounded-lg bg-green-900 bg-opacity-30">
-        <Link className="flex flex-col items-center w-full" href={show.location} target="_blank" rel="noopener noreferrer">
+        <Link className="flex flex-col items-center w-full" href={`https://www.google.com/maps?q=${show.location}`} target="_blank" rel="noopener noreferrer">
           <Image
             src="/assets/icons/show/ubic2.svg"
             alt="Ubicación"
@@ -77,7 +82,7 @@ const ShowCard = ({ show, handleEdit, handleDelete }) => {
         </div>
       </div>
 
-      {session?.user.email === "ignaluna98pb@gmail.com" && pathName === "/profile" && (
+      {authorizedEmails.includes(session?.user.email)  && pathName === "/profile" && (
         <div className='mt-5 flex-center gap-4 h-full  pt-3 border border-green-900 px-4 rounded-lg bg-green-900 bg-opacity-30'>
           <p
             className='font-jura text-sm green_gradient cursor-pointer'

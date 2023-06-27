@@ -4,10 +4,16 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { signIn, signOut, useSession, getProviders } from "next-auth/react";
+import dotenv from "dotenv";
+
+dotenv.config();
+
 
 const Nav = () => {
   const { data: session } = useSession();
-
+  const authorizedEmails =  ["ignaluna98pb@gmail.com", "lualeva17@gmail.com", 
+  "terriproduccionescontacto@gmail.com", "terriproducciones@gmail.com"]
+  // process.env.AUTHORIZED_EMAILS.split(",")
   const [providers, setProviders] = useState(null);
   const [toggleDropdown, setToggleDropdown] = useState(false);
 
@@ -95,15 +101,15 @@ const Nav = () => {
                 >
                   My Profile
                 </Link>
-                {session?.user.email === "ignaluna98pb@gmail.com" &&
-                <Link
-                  href='/create-show'
-                  className='dropdown_link'
-                  onClick={() => setToggleDropdown(false)}
-                >
-                  Create Show
-                </Link>
-                  }
+                {authorizedEmails.includes(session?.user.email) &&
+                  <Link
+                    href='/create-show'
+                    className='dropdown_link'
+                    onClick={() => setToggleDropdown(false)}
+                  >
+                    Create Show
+                  </Link>
+                }
                 <button
                   type='button'
                   onClick={() => {

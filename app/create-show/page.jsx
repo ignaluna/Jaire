@@ -1,5 +1,4 @@
 "use client"
-
 import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -15,30 +14,28 @@ const CreateShow = () => {
     flyer: "",
     eventLink: "",
     date: "",
-    description: "",
     location: "",
-    // artists: [],
-    // artistSocials: [],
   });
 
-  const NewShow = async (e) => {
-    e.preventDefault();
+  const NewShow = async (file) => {
     setIsSubmitting(true);
 
     try {
+      const formData = new FormData();
+      formData.set("file", file);
+      formData.append('upload_preset', 'Uploads-first');
+
+      const data = await fetch('https://api.cloudinary.com/v1_1/dvh8hozns/image/upload', {
+        method: 'POST',
+        body: formData,
+      }).then(r => r.json());
+
+
+      const updatedShow = { ...show, flyer: data.secure_url };
+
       const response = await fetch("/api/show/new", {
         method: "POST",
-        body: JSON.stringify({
-          flyer: show.flyer,
-          eventLink: show.eventLink,
-          date: show.date,
-          description: show.description,
-          location: show.location,
-          // artists: show.artists,
-          // artistSocials: show.artistSocials,
-          userId: session?.user.id,
-        }),
-        
+        body: JSON.stringify(updatedShow),
       });
 
       if (response.ok) {

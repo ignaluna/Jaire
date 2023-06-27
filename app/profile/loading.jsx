@@ -2,13 +2,13 @@ import Image from "next/image";
 
 const Loading = () => {
   return (
-    <div className='w-full flex-center'>
+    <div className='w-screen flex-center'>
       <Image
-        src='assets/images/loading/aliendance.gif'
-        width={50}
-        height={50}
+        src='/assets/images/loading/aliendance.gif'
+        width={100}
+        height={100}
         alt='loader'
-        className='object-contain'
+        className='object-cover'
       />
     </div>
   );

@@ -7,15 +7,12 @@ export const POST = async (request) => {
         flyer,
         eventLink,
         date,
-        description,
         location,
-        artists,
-        artistSocials,
     } = await request.json();
 
     try {
         await connectToDB();
-        const newShow = new Show({ creator: userId, flyer, eventLink, date, description, location, artists, artistSocials
+        const newShow = new Show({ creator: userId, flyer, eventLink, date, location
         });
         
         await newShow.save();

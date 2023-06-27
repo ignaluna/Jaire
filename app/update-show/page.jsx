@@ -14,6 +14,7 @@ const UpdateShow = () => {
     flyer: "",
     eventLink: "",
     date: "",
+    location: "",
   });
   const [submitting, setIsSubmitting] = useState(false);
 
