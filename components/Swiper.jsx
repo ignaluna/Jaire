@@ -12,7 +12,7 @@ import ShowCard from './ShowCard';
 import Loading from './Loading';
 
 
-export const Slider = () => {
+export const Slider = ({handleEdit, handleDelete}) => {
   const [allShows, setAllShows] = useState(0);
 
   const fetchShows = async () => {
@@ -61,6 +61,8 @@ export const Slider = () => {
             {allShows.map((show) => (
               <SwiperSlide key={show._id} className='max-md:gap-3'>
                 <ShowCard
+                  handleEdit={handleEdit}
+                  handleDelete={handleDelete}
                   key={show._id}
                   show={show}
                 />

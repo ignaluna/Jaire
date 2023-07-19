@@ -28,7 +28,7 @@ const MyProfile = () => {
 
   const handleDelete = async (show) => {
     const hasConfirmed = confirm(
-      "Queres eliminar este show? Lu puta"
+      "Queres eliminar este show?"
     );
 
     if (hasConfirmed) {

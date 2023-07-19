@@ -26,13 +26,14 @@ const Galery = () => {
 
                     />
                 </Link>
-                <Link className="flex flex items-center w-full" href="https://wa.link/1pihhz" target="_blank" rel="noopener noreferrer">
-                    <div className="flex-col border-l border-green-900 w-full h-full my-4 flex-center transform transition-transform duration-300 hover:-translate-y-1">
+                <Link className="flex flex items-center w-full" href={`mailto:${"terriproduccionescontacto@gmail.com"}`} target="_blank" rel="noopener noreferrer">
+                    <div className="flex-col border-l border-green-900 w-full h-full my-4 flex-center">
                         <Image
                             src="/assets/icons/contact/gmail.svg"
                             alt="gmail"
                             width={100}
                             height={100}
+                            className="transform transition-transform duration-300 hover:-translate-y-1"
                         />
                     </div>
                 </Link>
