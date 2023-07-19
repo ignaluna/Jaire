@@ -29,7 +29,8 @@ const Logo = () => {
           playsInline
           onLoadedData={() => setIsLoading(false)}
         >
-          <source src="/assets/images/fondos/videofondo2.mp4" type="video/mp4" />
+          <source src="https://res.cloudinary.com/dvh8hozns/video/upload/v1689787969/V%C3%ADdeo_sin_t%C3%ADtulo_Hecho_con_Clipchamp_1_o8syyc.mp4"
+           type="video/mp4" />
         </video>
       </div>
       {isLoading ? (
