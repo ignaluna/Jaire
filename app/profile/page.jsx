@@ -40,6 +40,8 @@ const MyProfile = () => {
         const filteredShows = myShows.filter((item) => item._id !== show._id);
 
         setMyShows(filteredShows);
+        
+        window.location.reload(true);
       } catch (error) {
         console.log(error);
       }

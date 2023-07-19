@@ -38,6 +38,7 @@ const CreateShow = () => {
 
       if (response.ok) {
         router.push("/");
+        window.location.reload(true);
       }
     } catch (error) {
       console.log(error);
